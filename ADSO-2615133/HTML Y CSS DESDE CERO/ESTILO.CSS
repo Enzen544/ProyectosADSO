@@ -1,0 +1,21 @@
+a {
+  text-decoration: none;
+  color: firebrick;
+}
+a:hover {
+  color: white;
+  background-color: red;
+  text-decoration: underline;
+}
+a:active {
+  color: orange;
+  text-decoration: none;
+}
+a:visited {
+  color: darkgreen;
+  text-decoration: none;
+}
+a:focus {
+  color: blue;
+  text-decoration: underline;
+}

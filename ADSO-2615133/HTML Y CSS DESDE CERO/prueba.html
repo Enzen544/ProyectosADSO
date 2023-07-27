@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>Ejercicio de selectores</title>
+    <style>
+      /* Enlace normal */
+      a {
+        color: red;
+        text-decoration: none;
+      }
+
+      /* Enlace con el cursor sobre él */
+      a:hover {
+        color: white;
+        background-color: red;
+        text-decoration: underline;
+      }
+
+      /* Enlace activo */
+      a:active {
+        color: orange;
+        text-decoration: none;
+      }
+
+      /* Enlace visitado */
+      a:visited {
+        color: darkgreen;
+        text-decoration: none;
+      }
+
+      /* Enlace con foco de teclado */
+      a:focus {
+        color: blue;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Universidad de Alicante</h1>
+    <ul>
+      <li><a href="presentacion.html">Presentación</a></li>
+      <li><a href="estudios.html">Estudios</a></li>
+      <li><a href="alumnos.html">Alumnos</a></li>
+      <li><a href="deportes.html">Deportes</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+    </ul>
+  </body>
+</html>

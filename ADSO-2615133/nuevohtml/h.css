@@ -1,0 +1,8 @@
+.col {
+  border: 1px solid #ffffff;
+  height: 75px;
+}
+.row {
+  text-align: center;
+  background-color: rgba(10, 150, 115, 0.904);
+}

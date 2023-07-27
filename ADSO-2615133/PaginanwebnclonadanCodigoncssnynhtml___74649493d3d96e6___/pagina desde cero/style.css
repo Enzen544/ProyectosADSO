@@ -1,0 +1,623 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #171f30; /*color fondo de la pagina*/
+}
+/*el header es donde se ponen los iconos y el mapa de navegacion en este el padding tiene como funcion establecer un espacio de 10 pixeles entre el contenido y el borde*/
+.header {
+  background-color: #171f30;
+  padding: 10px;
+}
+
+.note {
+  background-color: #fbbf24; /* es la nota de fondo que contiene la alerta el color ngro son sus letras el margin bottom es la distancia que este tendra del fondo o borde el align items alinea los elementos en el contenedor principal los alinea al centro del header y el display flex se encarga de colocar todos los elementos en una fila*/
+  color: #000000;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+/*alinea el icono de precaucion en el centro el font size coloca el tamaño del icono en este caso pero casi siempre es utilizado como tamaño de letra letra*/
+.alert-icon {
+  background-color: #000000;
+  color: #fbbf24;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  text-align: center;
+  margin-right: 10px;
+}
+/*inline block hace que los elementos se comporten como bloques individuales, mientras que la alineacion vertical nos ayuda a alinear al medio todos los elementos con el elemento padre*/
+.logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.navigation {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #000;
+  padding: 5px;
+}
+
+.navigation a:hover {
+  color: #ff0000;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-right: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+/*posicion relativa se encarga de */
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  padding: 5px;
+  position: relative;
+}
+/*el filtro del brillo se encarga de colocarle brillo para que quede ese color blanquito a los iconos de inicio series etc y una transicion al filtro mientras nos acercamos */
+nav ul li a img {
+  filter: brightness(0.8);
+  transition: filter 0.3s ease;
+}
+
+nav ul li a:hover img {
+  filter: brightness(5);
+}
+
+nav ul li a::before {
+  content: "";
+  position: absolute; /*se dejan posiciones en caja y hay que indicar la posicion*/
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  border: 2px solid rgba(0, 0, 0, 0); /*tamaño del borde*/
+  background-color: #504d37;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+}
+
+nav ul li a:hover::before {
+  opacity: 1;
+}
+
+nav ul li a:active img {
+  filter: brightness(1);
+}
+
+nav ul li a:active::before {
+  background-color: #fbbf24;
+}
+
+.icons {
+  margin-left: auto; /*se alinea automaticamente para que el derecho quede alineado al padre mismo lvl*/
+  display: flex;
+  align-items: center;
+}
+
+.icons img {
+  margin-left: 3px;
+  margin-right: 3px;
+  filter: brightness(0.8); /*brillo iconos de la derecha*/
+}
+
+.icons img.selected {
+  filter: none;
+  background-color: #e4950e;
+}
+
+.icons img.selected:hover {
+  filter: none;
+  background-color: #504d37;
+}
+
+.icons img.search-icon {
+  position: relative;
+}
+
+.icons img.search-icon:hover::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  background-color: transparent;
+  opacity: 0.5;
+}
+
+.icons img.profile-icon {
+  position: relative;
+}
+
+.icons img.profile-icon:hover::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  background-color: transparent;
+  opacity: 0.5;
+}
+/*cuerpo imagenes principales*/
+.left-image {
+  float: left;
+  margin-left: 6.15%;
+  width: 45%;
+  margin-top: 35px;
+  position: relative;
+}
+
+.left-image img {
+  width: 100%;
+  height: auto;
+  margin-right: 0.77%;
+  border-radius: 10px;
+  display: flex;
+}
+
+.right-images {
+  float: right;
+  margin-left: 1%;
+  width: 46.15%;
+  margin-top: 1%; /* Ajustar el valor para reducir la distancia */
+  position: relative; /*muestra la imagen por encima*/
+}
+
+.right-images img {
+  width: 90%;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 1.54%;
+}
+
+.caption {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(51, 71, 85, 0.3),
+    rgba(51, 71, 85, 0.9)
+  );
+  width: 95%;
+  padding: 2.5%;
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  right: auto;
+}
+
+.caption h3 {
+  margin: 0;
+  color: white;
+}
+
+.caption p {
+  margin-top: 0.77%;
+  color: #888;
+}
+
+.caption1 {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(51, 71, 85, 0.3),
+    rgba(51, 71, 85, 0.9)
+  );
+  width: 90%;
+  padding: 0.46%;
+  position: absolute;
+  bottom: 0;
+  right: auto;
+}
+
+.caption1 h3 {
+  color: white;
+}
+
+.right-images .caption1 p {
+  color: #888;
+}
+/* solucion al problema que tenia, en pocas palabras forma de combatir el problema del contenedor de altura cero para elementos flotantes. 
+Lo que hace es forzar el contenido después de la flota o el envase que contiene la flota a rendir por debajo de ella*/
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Estilos para la sección del subtítulo */
+.section-subtitle {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+.titulo {
+  color: #f2f2f2;
+}
+.catalog-bar {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 0;
+}
+
+.catalog-item {
+  display: inline-block; /*cada elemento por individual*/
+  margin-right: 10px;
+}
+.catalog-item img {
+  width: 200px;
+  height: auto;
+}
+/*esto es lo que hace la lista de popular*/
+
+.image-container {
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  overflow-x: scroll; /*es el que da la descripcion al pasar el mouse por el*/
+  background-color: #1f2937;
+  height: 50%;
+  white-space: nowrap; /**/
+}
+
+.scrollbar {
+  width: 100%;
+  padding: 10px 0;
+}
+
+.content {
+  display: flex; /*elementos horizontales*/
+}
+
+.image {
+  position: relative; /*trae las imagenes al frente*/
+  text-decoration: none;
+  margin-right: 2%;
+  flex-shrink: 0; /**/
+  width: 20%;
+  display: flex;
+  flex-direction: column; /*ubica las imagenes en columnas una debajo de otra pero con el flex se ponen una al lado de la otra*/
+  height: 100%;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+/*todo el overlay se encarga de hacer que cuando mi mouse pase por el se me salga el cuadro de color que muestra la descripcion en pocas palabras es el cuadro*/
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  padding: 20%;
+}
+
+.image:hover .overlay {
+  opacity: 1; /*opacacidad delcuadro*/
+}
+/*es la descripcion que aparece en las imagenes la letra*/
+.overlay h3 {
+  margin: 0;
+  color: #ffffff;
+  overflow-y: auto; /**/
+  white-space: normal;
+  max-width: 100%;
+  height: 70%;
+}
+
+/*aca termina y sigue la seccion de siguenos*/
+.follow-us {
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: #111827;
+  padding: 3%;
+  text-align: left;
+  width: 85%;
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.follow-us h2 {
+  margin: 0;
+  color: white;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container img {
+  width: 600%; /*no se porque funciona con ese tamaño*/
+  height: 100%;
+  margin-left: auto;
+}
+
+/*termina seccion de siganos*/
+.nuevos-lanzamientos {
+  margin-left: 3%;
+  margin-top: 20px;
+  padding: 15px;
+  margin-right: 3%;
+}
+
+.nuevos-lanzamientos h2 {
+  color: #ffffff;
+}
+
+.nuevos-lanzamientos p {
+  color: #7a818e;
+}
+
+.catalogo {
+  display: flex;
+  flex-wrap: wrap; /*controla las direcciones para decidir si los elementos de un padre deben de seguir la linea o no*/
+  justify-content: space-between;
+  width: 100%; /* Ajustar al ancho completo */
+  margin-top: 1%;
+  gap: 3; /* Ajustar el espacio entre las imágenes */
+}
+
+.catalogo img {
+  width: calc(20% - 10px);
+  margin-bottom: 10px;
+  border-radius: 10px;
+  max-width: 100%; /* Ajustar imagen al ancho máximo permitido */
+}
+
+.catalogo img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+/*termina la secicon de nuevos lanzamientos*/
+
+.aviso {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* alineado arriba y a la derecha*/
+  background-color: #1f2937; /*color que se usa en el aviso*/
+  color: #ffffff;
+  padding: 30px;
+  margin-left: 3%;
+  margin-right: 0%;
+}
+
+.aviso .contenido {
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+}
+
+.aviso h2,
+.aviso p {
+  margin: 0;
+}
+
+.aviso .fondo {
+  margin-top: 20px;
+  position: relative;
+}
+
+.aviso .fondo img {
+  position: relative;
+  top: 0;
+  left: 0;
+  max-width: 50%;
+}
+/*novelitas nuevas y tontas casi que la ultima seccion de la pagina... ya casi a dormir*/
+.scrollbarr {
+  overflow-x: scroll; /*decide si se muestra la barra de dezplazamiento*/
+  margin-bottom: 20px;
+  white-space: nowrap;
+}
+
+.contentt {
+  display: inline-block;
+}
+
+.Novelitas {
+  display: inline-flex;
+  gap: 1%; /* Ajusta el espacio entre las novelas */
+}
+
+.Novelitas img {
+  flex: 0 0 calc(20% - 1%); /* Ajusta el ancho de las imágenes */
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.novelas {
+  color: #f2f2f2;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.Novelitas {
+  display: inline-flex;
+  gap: 0%; /*espacio entre filas columnas y cuadricula*/
+}
+
+.Novelitas img {
+  flex: 0 0 calc(3% - 1%);
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.Novelitas {
+  display: inline-flex;
+  gap: 0%; /*espacio entre filas columnas y cuadricula*/
+}
+
+.Novelitas img {
+  flex: 0 0 calc(18% - 1%);
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.Novelitas img {
+  flex: 0 0 calc(30% - 1%); /* Ajusta el ancho de las imágenes */
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+/*aca termina novelas*/
+/*comentarios*/
+.comments {
+  color: #f2f2f2;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+.testimonial img {
+  height: 100%;
+  clip-path: circle();
+}
+
+/* Alinea el texto al centro */
+.testimonial h3 {
+  text-align: center;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.circle {
+  background-color: transparent;
+  border: 3px solid purple;
+  height: 90px;
+  position: relative;
+  top: -30px;
+  left: 120px;
+  border-radius: 50%;
+  width: 90px;
+}
+
+.card {
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 10px;
+  background-color: #194857;
+  border-radius: 10px;
+  box-shadow: -7px -7px 20px rgba(0, 0, 0, 0.2), 7px 7px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card h3,
+.card p {
+  text-align: center; /* Alinea el texto al centro */
+}
+@media (max-width: 768px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3vw; /* Ajusta el espacio entre las tarjetas utilizando vw */
+  }
+
+  .circle {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 3vw;
+  }
+
+  .circle {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/*termina comentarios sigue lo ultimo*/
+.seccion {
+  display: flex;
+  flex-direction: row; /*coloca a los elementos flexibles*/
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.botones-izquierda {
+  margin-left: 5%;
+  margin-top: 3%;
+  display: flex;
+  align-items: center;
+}
+
+.botones-izquierda a {
+  margin-right: 10px;
+}
+
+.contenido {
+  flex-grow: 1;
+  color: #969da9;
+
+  margin-top: 10%;
+  text-align: left;
+}
+
+.logo {
+  align-self: flex-end;
+  text-align: right;
+  margin-top: auto;
+}
+/*encia el logo a la parte de abajo y a la derecha de eso es el flex end*/
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*termine... mama su hijo lo logro.... su hijo es todo un exito señora :V (un poco de motivacion despues de casi 700 lineas de codigo fuera de las de html*/

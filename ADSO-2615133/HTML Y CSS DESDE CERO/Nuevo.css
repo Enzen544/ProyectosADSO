@@ -1,0 +1,35 @@
+li {
+  display: inline-block;
+  background-color: blue;
+  color: white;
+  list-style-type: none;
+  margin: 2px;
+  padding: 5px;
+  width: 150px;
+  text-align: center;
+}
+li:hover {
+  border: 2px solid red;
+}
+a {
+  color: white;
+}
+a {
+  text-decoration: none;
+}
+body:before {
+  content: "";
+  display: block;
+  height: 35px;
+  width: 2000px;
+  background-color: black;
+}
+body:after {
+  content: "";
+  display: block;
+  height: 35px;
+  width: 2000px;
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+}
